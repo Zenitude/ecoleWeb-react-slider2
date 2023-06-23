@@ -17,6 +17,14 @@ export const SliderContainer = styled.div`
         position: absolute;
         top: 35%;
         transform: translateY(-50%);
+        width: 50px;
+        height: 50px;
+
+        img{
+            width: 100%;
+            height: 100%;
+            filter: invert(100%);
+        }
     }
 `;
 
@@ -62,3 +70,5 @@ export const Slide = styled.img`
     width: 100%;
     height: 100%;
 `;
+
+export const Zone = styled.div``;

@@ -1,5 +1,7 @@
 import { useState } from 'react';
-import { SliderContainer, Previous, Next, ContainerSlides, CountSlides, Slide } from "./Slider.style";
+import { SliderContainer, Previous, Next, ContainerSlides, CountSlides, Slide, Zone } from "./Slider.style";
+import previous from '../../assets/left-arrow.svg';
+import next from '../../assets/right-arrow.svg';
 
 type SliderProps = {
     progress: boolean
@@ -32,11 +34,15 @@ export default function Slider({progress} : SliderProps) {
                 && (<CountSlides> {index} / {limit} </CountSlides>)
             }
             
-            <Previous className="previous" onClick={switchSlide}>P</Previous>
-            <Next className="next" onClick={switchSlide}>N</Next>
+            <Previous className="previous" onClick={switchSlide}>
+                <img src={previous} alt="Passer à l'image précédente" />
+            </Previous>
+            <Next className="next" onClick={switchSlide}>
+            <img src={next} alt="Passer à l'image suivante" />
+            </Next>
             
             <ContainerSlides>
-                <div>{zones[index-1]}</div>
+                <Zone>{zones[index-1]}</Zone>
                 <Slide src={`images/img-${index}.jpg`} />
             </ContainerSlides>
         
